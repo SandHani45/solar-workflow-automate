@@ -77,4 +77,4 @@ Every demo account uses the password `Demo@1234`.
 
 - [Architecture](docs/ARCHITECTURE.md)
 - [REST API contract](docs/API.md)
-- [Deployment](docs/DEPLOYMENT.md)
+- [Deployment](docs/DEPLOYMENT.md): Docker Compose, managed services, or Railway (config files included)
