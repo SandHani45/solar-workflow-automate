@@ -44,7 +44,7 @@ export function KanbanBoard<T>({ columns, itemKey, renderCard, onMove, loading, 
   }
 
   return (
-    <div className="scrollbar-thin -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-3 sm:mx-0 sm:px-0">
+    <div className="relative scrollbar-thin -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-3 sm:mx-0 sm:px-0">
       {columns.map((col) => {
         const tone = TONE_STYLES[col.tone ?? 'neutral'];
         return (

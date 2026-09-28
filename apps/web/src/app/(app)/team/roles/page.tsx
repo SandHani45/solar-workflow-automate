@@ -76,7 +76,7 @@ function Matrix({ roles }: { roles: Role[] }) {
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm text-muted-foreground">Tick what each role may do. Changes apply at the member&apos;s next request.</p>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {changed.length > 0 && (
             <Button variant="ghost" onClick={() => setDraft(Object.fromEntries(roles.map((r) => [r.id, new Set(r.permissions)])))}>
               <Undo2 /> Discard
@@ -91,7 +91,7 @@ function Matrix({ roles }: { roles: Role[] }) {
         </div>
       </div>
 
-      <div className="scrollbar-thin overflow-x-auto rounded-xl border border-border bg-card shadow-xs">
+      <div className="relative scrollbar-thin overflow-x-auto rounded-xl border border-border bg-card shadow-xs">
         <table className="w-full border-collapse text-sm">
           <caption className="sr-only">Role permission matrix</caption>
           <thead className="sticky top-0 z-10 bg-card">

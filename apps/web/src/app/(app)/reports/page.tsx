@@ -44,7 +44,7 @@ function Reports() {
           CSV exports
         </h2>
         {canExport ? (
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {EXPORTS.map((e) => (
               <Card key={e.kind} className="flex items-center gap-3 p-4">
                 <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary dark:text-blue-400">

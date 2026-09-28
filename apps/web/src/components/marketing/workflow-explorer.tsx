@@ -21,9 +21,9 @@ export function WorkflowExplorer() {
   const tone = TONE_STYLES[phase.color];
 
   return (
-    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[320px_1fr]">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
       {/* Phase rail: horizontal scroller on phones, vertical timeline on desktop */}
-      <div role="tablist" aria-label="Workflow phases" aria-orientation="vertical" className="scrollbar-thin -mx-4 flex gap-2 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0">
+      <div role="tablist" aria-label="Workflow phases" aria-orientation="vertical" className="relative scrollbar-thin -mx-4 flex gap-2 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0">
         {PHASES.map((p) => {
           const active = p.key === phase.key;
           const t = TONE_STYLES[p.color];
@@ -55,7 +55,7 @@ export function WorkflowExplorer() {
         })}
       </div>
 
-      <div id="phase-panel" role="tabpanel" aria-labelledby={`phase-tab-${phase.key}`} className="min-w-0 rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-6">
+      <div id="phase-panel" role="tabpanel" aria-labelledby={`phase-tab-${phase.key}`} className="min-w-0 rounded-2xl border border-border bg-card p-4 break-words shadow-sm sm:p-6">
         <div className="flex flex-wrap items-center gap-3">
           <span className={cn('rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ring-inset', tone.badge)}>Phase {phase.order}</span>
           <h3 className="text-lg font-semibold">{phase.name}</h3>

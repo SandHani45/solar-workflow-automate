@@ -69,7 +69,7 @@ function PortalProject({ id }: { id: string }) {
   return (
     <>
       <ProgressHero project={project} />
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1.2fr_1fr]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
         <PhaseTracker project={project} />
         <div className="space-y-5">
           <PaymentsCard project={project} />

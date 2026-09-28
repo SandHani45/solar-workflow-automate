@@ -74,7 +74,7 @@ function WorkflowEditor({ workflow }: { workflow: Workflow }) {
         <p className="max-w-2xl text-sm text-muted-foreground">
           Version <span className="font-semibold text-foreground">{workflow.version}</span> · {stages.length} stages. Changes apply to <em>new</em> projects; running projects keep the version they started with.
         </p>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Button variant="ghost" onClick={() => setConfirmReset(true)} disabled={readOnly}>
             <RotateCcw /> Reset to defaults
           </Button>

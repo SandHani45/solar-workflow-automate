@@ -101,7 +101,9 @@ async function parseError(res: Response): Promise<ApiError> {
   }
   const e = (body as { error?: { code?: string; message?: string; details?: unknown } } | null)?.error;
   if (e) return new ApiError(res.status, e.code ?? 'INTERNAL', e.message ?? res.statusText, e.details);
-  if (res.status === 502 || res.status === 503 || res.status === 504) {
+  // The API always answers with a JSON envelope, so a bare 5xx means the proxy couldn't reach it
+  // (Next.js reports a failed rewrite as a plain-text 500).
+  if (res.status >= 500) {
     return new ApiError(res.status, 'UNAVAILABLE', 'The server is unreachable. Please try again shortly.');
   }
   return new ApiError(res.status, 'INTERNAL', res.statusText || 'Request failed');

@@ -55,9 +55,9 @@ export default function LandingPage() {
       <section className="relative overflow-hidden px-4 pt-12 pb-20 sm:px-6 sm:pt-20 sm:pb-28">
         <div aria-hidden className="absolute inset-0 -z-10 bg-[radial-gradient(60rem_30rem_at_70%_-10%,rgba(251,191,36,0.16),transparent),radial-gradient(50rem_30rem_at_10%_0%,rgba(37,99,235,0.14),transparent)]" />
         <div aria-hidden className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)] bg-[size:48px_48px] opacity-40" />
-        <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_1fr]">
+        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] items-center gap-14 lg:grid-cols-[1.05fr_1fr]">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-amber-300/60 bg-accent-soft px-3 py-1 text-xs font-medium text-amber-800 dark:border-amber-500/30 dark:text-amber-300">
+            <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-amber-300/60 bg-accent-soft px-3 py-1 text-xs font-medium text-amber-800 dark:border-amber-500/30 dark:text-amber-300">
               <BadgeCheck className="size-3.5" aria-hidden /> Built for Indian rooftop EPCs · PM Surya Ghar ready
             </p>
             <h1 className="mt-5 text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
@@ -108,7 +108,7 @@ export default function LandingPage() {
         title="Your SOP, running as a workflow engine"
         description="Seven phases, each with stages that have owners, SLAs, checklists, required documents and payment gates. Pick a phase to see exactly what happens and who does it."
       >
-        <ol aria-label="Phases" className="mb-10 hidden items-center justify-between gap-2 md:flex">
+        <ol aria-label="Phases" className="mb-10 hidden items-center justify-between gap-2 lg:flex">
           {PHASES.map((p, i) => (
             <li key={p.key} className="flex flex-1 items-center gap-2">
               <span className={cn('flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white shadow-sm', TONE_STYLES[p.color].dot)}>{p.order}</span>

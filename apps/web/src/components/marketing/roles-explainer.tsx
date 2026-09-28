@@ -29,7 +29,7 @@ export function RolesExplainer() {
 
   return (
     <div>
-      <div role="tablist" aria-label="Roles" className="scrollbar-thin -mx-4 flex gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:px-0">
+      <div role="tablist" aria-label="Roles" className="relative scrollbar-thin -mx-4 flex gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:px-0">
         {ROLES.map((r) => (
           <button
             key={r.key}
@@ -47,7 +47,7 @@ export function RolesExplainer() {
         ))}
       </div>
 
-      <div role="tabpanel" className="mt-6 grid gap-6 rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-7 lg:grid-cols-2">
+      <div role="tabpanel" className="mt-6 grid grid-cols-[minmax(0,1fr)] gap-6 rounded-2xl border border-border bg-card p-5 break-words shadow-sm sm:p-7 lg:grid-cols-2">
         <div>
           <p className="text-sm font-medium text-amber-600 dark:text-amber-400">{role.name}</p>
           <h3 className="mt-1 text-xl font-semibold tracking-tight">{story?.headline}</h3>
