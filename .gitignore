@@ -13,3 +13,4 @@ uploads/
 .DS_Store
 playwright-report/
 test-results/
+.claude/worktrees/
