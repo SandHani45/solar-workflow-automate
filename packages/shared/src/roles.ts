@@ -116,7 +116,7 @@ export const DEFAULT_ROLES: RoleDefinition[] = [
     name: 'Accounts',
     description: 'Payments, expenses, bills and the finance dashboard.',
     permissions: [
-      'dashboard:read', 'projects:read', 'projects:read_all',
+      'dashboard:read', 'projects:read', 'projects:read_all', 'workflow:advance',
       'quotations:read', 'documents:read', 'documents:write',
       'inventory:read', 'payments:read', 'payments:write',
       'expenses:read', 'expenses:write', 'expenses:approve',
