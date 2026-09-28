@@ -55,7 +55,7 @@ git pull && docker compose up -d --build
 The repo includes a Railway config file for each service (`apps/api/railway.json`, `apps/web/railway.json`).
 Both build from their Dockerfile, with the repo root as the build context.
 
-1. **MongoDB.** Add the MongoDB database to the project. It exposes `MONGO_URL`, e.g.
+1. **MongoDB.** (`.env.railway.example` has every variable below, ready to paste.) Add the MongoDB database to the project. It exposes `MONGO_URL`, e.g.
    `mongodb://mongo:<password>@mongodb.railway.internal:27017`. That address only works inside the
    Railway project, so the API must also run on Railway.
 2. **API service.** Use New → GitHub repo → this repository. Then set:
