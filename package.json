@@ -1,0 +1,18 @@
+{
+  "name": "solar-workflow-automate",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SolarFlow — multi-tenant SaaS to run a solar installation business end-to-end: lead to profit.",
+  "packageManager": "pnpm@10.33.0",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "pnpm -r --parallel --filter ./apps/** dev",
+    "dev:api": "pnpm --filter @solar/api dev",
+    "dev:web": "pnpm --filter @solar/web dev",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "seed": "pnpm --filter @solar/api seed"
+  }
+}
