@@ -40,7 +40,7 @@ export function TicketDetail({ id, customerMode }: { id: string; customerMode?: 
   const closed = t.status === 'closed';
 
   return (
-    <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1.5fr_1fr]">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
       <div className="min-w-0 space-y-5">
         <Card>
           <CardContent className="space-y-5">

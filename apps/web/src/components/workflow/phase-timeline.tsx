@@ -20,7 +20,7 @@ export function PhaseTimeline({ phases, current, onSelect }: { phases: PhaseView
     if (el && list && list.scrollWidth > list.clientWidth) list.scrollLeft = el.offsetLeft - list.clientWidth / 2 + el.offsetWidth / 2;
   }, [current]);
   return (
-    <ol ref={listRef} className="scrollbar-thin -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-flow-col sm:auto-cols-fr sm:px-0">
+    <ol ref={listRef} className="relative scrollbar-thin -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-flow-col sm:auto-cols-fr sm:px-0">
       {phases.map(({ phase, stages, done }) => {
         const complete = done === stages.length;
         const isCurrent = phase.key === current && !complete;

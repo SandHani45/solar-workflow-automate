@@ -93,7 +93,8 @@ export function DataTable<T>({
 
   return (
     <div className={cn('overflow-hidden rounded-xl border border-border bg-card shadow-xs', className)}>
-      <div className="scrollbar-thin overflow-x-auto">
+      {/* relative: absolutely-positioned cell content (e.g. sr-only labels) must be clipped by this scroller, not widen the page */}
+      <div className="scrollbar-thin relative overflow-x-auto">
         <table className="w-full min-w-max border-collapse text-sm">
           {caption && <caption className="sr-only">{caption}</caption>}
           <thead>

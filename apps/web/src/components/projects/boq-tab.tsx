@@ -47,7 +47,7 @@ export function BoqTab({ project }: { project: Project }) {
           )
         }
       />
-      <div className="scrollbar-thin overflow-x-auto">
+      <div className="relative scrollbar-thin overflow-x-auto">
         <table className="w-full min-w-[640px] text-sm">
           <thead className="bg-muted/40 text-xs text-muted-foreground">
             <tr>

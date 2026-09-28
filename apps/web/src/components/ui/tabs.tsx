@@ -11,7 +11,7 @@ export const TabsList = forwardRef<ElementRef<typeof TabsPrimitive.List>, Compon
   return (
     <TabsPrimitive.List
       ref={ref}
-      className={cn('scrollbar-thin -mx-4 flex gap-1 overflow-x-auto border-b border-border px-4 sm:mx-0 sm:px-0', className)}
+      className={cn('relative scrollbar-thin -mx-4 flex gap-1 overflow-x-auto border-b border-border px-4 sm:mx-0 sm:px-0', className)}
       {...props}
     />
   );

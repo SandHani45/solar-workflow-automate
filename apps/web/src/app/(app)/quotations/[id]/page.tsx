@@ -111,7 +111,7 @@ function QuotationView() {
           </div>
         </section>
 
-        <div className="mt-6 overflow-x-auto">
+        <div className="relative mt-6 overflow-x-auto">
           <table className="w-full min-w-[520px] text-sm">
             <thead>
               <tr className="bg-[#1e3a8a] text-left text-xs text-white">

@@ -21,7 +21,7 @@ export function SectionTabs({ section }: { section: string }) {
     .sort((a, b) => b.length - a.length)[0];
 
   return (
-    <nav aria-label={`${item?.label} sections`} className="scrollbar-thin -mx-4 mb-6 flex gap-1 overflow-x-auto border-b border-border px-4 sm:mx-0 sm:px-0">
+    <nav aria-label={`${item?.label} sections`} className="relative scrollbar-thin -mx-4 mb-6 flex gap-1 overflow-x-auto border-b border-border px-4 sm:mx-0 sm:px-0">
       {children.map((c) => {
         const active = c.href === activeHref;
         return (

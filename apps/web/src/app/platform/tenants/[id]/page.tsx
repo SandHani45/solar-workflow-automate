@@ -60,7 +60,7 @@ function Tenant({ org }: { org: PlatformOrg }) {
           )
         }
       />
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-[320px_1fr]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[320px_minmax(0,1fr)]">
         <Card className="self-start">
           <CardHeader title="Subscription" />
           <CardContent className="space-y-4">

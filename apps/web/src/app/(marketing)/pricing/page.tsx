@@ -31,7 +31,7 @@ export default function PricingPage() {
       </section>
 
       <Section title="Compare plans" description="Every module, side by side." className="bg-muted/40">
-        <div className="scrollbar-thin mx-auto max-w-5xl overflow-x-auto rounded-2xl border border-border bg-card">
+        <div className="relative scrollbar-thin mx-auto max-w-5xl overflow-x-auto rounded-2xl border border-border bg-card">
           <table className="w-full min-w-[560px] text-sm">
             <caption className="sr-only">Feature comparison across plans</caption>
             <thead>

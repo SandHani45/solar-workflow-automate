@@ -113,7 +113,7 @@ function LeadDetail() {
         }
       />
 
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1fr_1.4fr]">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
         <div className="space-y-5">
           <Card>
             <CardHeader title="Details" />
@@ -270,7 +270,7 @@ function Detail({ label, children, wide }: { label: string; children: React.Reac
   return (
     <div className={wide ? 'col-span-2' : undefined}>
       <dt className="text-xs text-muted-foreground">{label}</dt>
-      <dd className="mt-0.5 font-medium whitespace-pre-line">{children}</dd>
+      <dd className="mt-0.5 font-medium whitespace-pre-line [overflow-wrap:anywhere]">{children}</dd>
     </div>
   );
 }
