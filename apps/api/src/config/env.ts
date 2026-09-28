@@ -18,6 +18,10 @@ const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   PORT: z.coerce.number().int().positive().default(4000),
   MONGODB_URI: z.string().min(1).default('mongodb://localhost:27017/solarflow'),
+  /** Database name when the URI has none (e.g. Railway's MONGO_URL); overrides the URI path if set. */
+  MONGODB_DB_NAME: z.string().min(1).optional(),
+  /** Seed the demo organisation on boot when it doesn't exist yet (never overwrites). */
+  SEED_DEMO_ON_BOOT: z.enum(['true', 'false']).default('false'),
   JWT_ACCESS_SECRET: devSecret('JWT_ACCESS_SECRET'),
   JWT_REFRESH_SECRET: devSecret('JWT_REFRESH_SECRET'),
   ACCESS_TOKEN_TTL: z.string().default('15m'),

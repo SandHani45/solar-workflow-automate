@@ -4,7 +4,7 @@ import { mongoose } from './mongoose';
 
 export async function connectDb(uri = env.MONGODB_URI): Promise<typeof mongoose> {
   if (mongoose.connection.readyState === 1) return mongoose;
-  await mongoose.connect(uri, { serverSelectionTimeoutMS: 10_000, autoIndex: true });
+  await mongoose.connect(uri, { serverSelectionTimeoutMS: 10_000, autoIndex: true, ...(env.MONGODB_DB_NAME && { dbName: env.MONGODB_DB_NAME }) });
   logger.info({ db: mongoose.connection.name }, 'MongoDB connected');
   return mongoose;
 }

@@ -79,6 +79,10 @@ async function main(): Promise<void> {
   await Promise.all(Object.values(mongoose.models).map((m) => m.init()));
   await syncFeatureCatalogue();
   await ensureSuperAdmin();
+  if (process.argv.includes('--if-missing') && (await Org.exists({ slug: DEMO_SLUG }))) {
+    logger.info('Demo organisation already exists; skipping seed (--if-missing)');
+    return;
+  }
   await purgeDemo();
 
   // ── Organisation ──
