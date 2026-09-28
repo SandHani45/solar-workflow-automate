@@ -1,0 +1,15 @@
+# BuildKit picks this up for apps/web/Dockerfile (context = repo root).
+**/node_modules
+**/.next
+**/dist
+**/coverage
+**/playwright-report
+**/test-results
+**/.turbo
+**/*.log
+**/.env
+**/.env.*
+!.env.example
+.git
+apps/web/docs/screenshots
+uploads
