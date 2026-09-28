@@ -3,7 +3,7 @@ import { forwardRef, type ButtonHTMLAttributes, type ComponentProps } from 'reac
 import { Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'accent' | 'link';
+export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'accent' | 'metal' | 'link';
 export type ButtonSize = 'sm' | 'md' | 'lg' | 'icon' | 'icon-sm';
 
 const VARIANTS: Record<ButtonVariant, string> = {
@@ -13,6 +13,8 @@ const VARIANTS: Record<ButtonVariant, string> = {
   ghost: 'text-foreground hover:bg-muted',
   destructive: 'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
   accent: 'bg-accent text-accent-foreground shadow-sm hover:brightness-105',
+  /** Animated liquid-gold finish for the few highest-intent CTAs. */
+  metal: 'fx-metal font-semibold',
   link: 'text-primary underline-offset-4 hover:underline dark:text-blue-400 px-0',
 };
 

@@ -11,6 +11,7 @@ import { PricingCards } from '@/components/marketing/pricing-cards';
 import { RolesExplainer } from '@/components/marketing/roles-explainer';
 import { FaqList, Section } from '@/components/marketing/section';
 import { WorkflowExplorer } from '@/components/marketing/workflow-explorer';
+import { BorderBeam } from '@/components/effects';
 import { ButtonLink } from '@/components/ui/button';
 
 export const metadata: Metadata = { title: { absolute: 'SolarFlow — Run your solar business from lead to profit' } };
@@ -66,7 +67,7 @@ export default function LandingPage() {
               SolarFlow turns your SOP into a live workflow: quotations, KYC, subsidy and loans, stock and dispatch, installation, DISCOM net-metering, service and a real profit sheet — with every team seeing exactly what’s theirs.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/register" size="lg">
+              <ButtonLink href="/register" size="lg" variant="metal">
                 Start free trial <ArrowRight />
               </ButtonLink>
               <ButtonLink href="/#workflow" size="lg" variant="outline">
@@ -225,12 +226,13 @@ export default function LandingPage() {
       {/* ── CTA ── */}
       <section className="px-4 py-16 sm:px-6 sm:py-24">
         <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-gradient-to-br from-[#0b1a45] via-[#1e3a8a] to-[#1d4ed8] px-6 py-12 text-center text-white shadow-xl sm:px-12 sm:py-16">
+          <BorderBeam tone="solar" duration={10} width={2} />
           <div aria-hidden className="absolute -top-20 -right-20 size-72 rounded-full bg-amber-400/30 blur-3xl" />
           <Layers3 className="mx-auto size-10 text-amber-300" aria-hidden />
           <h2 className="relative mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">Put every project on one workflow this week</h2>
           <p className="relative mx-auto mt-3 max-w-xl text-blue-100/90">Set up your organisation in two minutes. Import your team, keep your SOP, and see your first profit sheet at project closure.</p>
           <div className="relative mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <ButtonLink href="/register" size="lg" variant="accent">
+            <ButtonLink href="/register" size="lg" variant="metal">
               Start free trial <ArrowRight />
             </ButtonLink>
             <ButtonLink href="/login" size="lg" variant="outline" className="border-white/30 bg-white/10 text-white hover:bg-white/20">

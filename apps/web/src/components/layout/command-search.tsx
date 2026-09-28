@@ -2,9 +2,10 @@
 
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { useRouter } from 'next/navigation';
-import { ArrowRight, ClipboardList, CornerDownLeft, FolderKanban, Loader2, Search, Wrench } from 'lucide-react';
+import { ArrowRight, ClipboardList, CornerDownLeft, FolderKanban, Search, Wrench } from 'lucide-react';
 import { useEffect, useMemo, useState, type KeyboardEvent, type ReactNode } from 'react';
 import { humanize } from '@solar/shared';
+import { ThinkingOrbs } from '@/components/effects';
 import { useSearch } from '@/hooks/api/use-misc';
 import { useDebounce } from '@/hooks/use-debounce';
 import { useSession } from '@/hooks/use-session';
@@ -92,7 +93,7 @@ function SearchBody({ onDone }: { onDone: () => void }) {
   return (
     <div>
       <div className="flex items-center gap-2 border-b border-border px-4">
-        {isFetching ? <Loader2 className="size-4 animate-spin text-muted-foreground" aria-hidden /> : <Search className="size-4 text-muted-foreground" aria-hidden />}
+        {isFetching ? <ThinkingOrbs size={16} label={null} /> : <Search className="size-4 text-muted-foreground" aria-hidden />}
         <input
           autoFocus
           value={q}

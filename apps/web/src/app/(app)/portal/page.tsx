@@ -11,6 +11,7 @@ import type { Project } from '@/lib/types';
 import { cn, formatDate, formatINR, formatKw } from '@/lib/utils';
 import { TONE_STYLES } from '@/lib/status';
 import { projectPhases } from '@/lib/workflow';
+import { GooeyProgress } from '@/components/effects';
 import { SlaIndicator } from '@/components/service/sla-indicator';
 import { TicketDialog } from '@/components/service/ticket-dialog';
 import { TicketDetail } from '@/components/service/ticket-detail';
@@ -108,7 +109,11 @@ function ProgressHero({ project }: { project: Project }) {
             <span>Overall progress</span>
             <span className="tabular font-semibold">{project.progress}%</span>
           </div>
-          <Progress value={project.progress} className="h-2.5 bg-white/20" barClassName="from-amber-300 to-amber-400" label="Overall progress" />
+          <GooeyProgress
+            value={project.progress}
+            label="Overall progress"
+            steps={projectPhases(project).map(({ phase, stages, done }) => ({ key: phase.key, label: phase.name, fraction: stages.length ? done / stages.length : 1 }))}
+          />
         </div>
       </div>
     </Card>

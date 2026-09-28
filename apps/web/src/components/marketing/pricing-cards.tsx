@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { FEATURE_CATALOGUE } from '@solar/shared';
 import { PLANS } from '@/lib/plans';
 import { cn, formatINR } from '@/lib/utils';
+import { BorderBeam } from '@/components/effects';
 import { ButtonLink } from '@/components/ui/button';
 import { Segmented } from '@/components/ui/tabs';
 
@@ -38,6 +39,7 @@ export function PricingCards({ compact }: { compact?: boolean }) {
                 plan.highlighted ? 'border-primary shadow-lg ring-1 ring-primary dark:border-blue-500 dark:ring-blue-500' : 'border-border',
               )}
             >
+              {plan.highlighted && <BorderBeam tone="solar" duration={8} />}
               {plan.highlighted && (
                 <span className="absolute -top-3 left-6 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground shadow-sm">Most popular</span>
               )}
@@ -54,7 +56,7 @@ export function PricingCards({ compact }: { compact?: boolean }) {
                 )}
               </div>
               <p className="mt-1 h-4 text-xs text-muted-foreground">{price ? (billing === 'yearly' ? `Billed yearly · ${formatINR(price * 12)}/yr + GST` : 'Billed monthly + GST') : 'Volume & multi-branch pricing'}</p>
-              <ButtonLink href={plan.key === 'enterprise' ? '/pricing#contact' : `/register?plan=${plan.key}`} variant={plan.highlighted ? 'primary' : 'outline'} className="mt-6 w-full">
+              <ButtonLink href={plan.key === 'enterprise' ? '/pricing#contact' : `/register?plan=${plan.key}`} variant={plan.highlighted ? 'metal' : 'outline'} className="mt-6 w-full">
                 {plan.cta}
               </ButtonLink>
               <div className="mt-6 border-t border-border pt-5 text-sm">

@@ -5,6 +5,7 @@ import { cn, formatDate } from '@/lib/utils';
 import { roleShort } from '@/lib/roles';
 import { TONE_STYLES, type Tone } from '@/lib/status';
 import { isStageOverdue, stageChecklist, type StageView } from '@/lib/workflow';
+import { BorderBeam } from '@/components/effects';
 import { Avatar } from '@/components/ui/avatar';
 import { StageStatusBadge } from './stage-status';
 
@@ -22,12 +23,13 @@ export function StageCard({ view, tone, presentDocTypes, onOpen, mine }: { view:
       onClick={onOpen}
       data-testid={`stage-card-${def.key}`}
       className={cn(
-        'group flex w-full flex-col gap-2.5 rounded-xl border border-l-4 bg-card p-3.5 text-left shadow-xs transition-all hover:-translate-y-px hover:shadow-md focus-visible:outline-2 focus-visible:outline-ring',
+        'group relative flex w-full flex-col gap-2.5 rounded-xl border border-l-4 bg-card p-3.5 text-left shadow-xs transition-all hover:-translate-y-px hover:shadow-md focus-visible:outline-2 focus-visible:outline-ring',
         TONE_STYLES[tone].border,
         overdue ? 'border-y-rose-300 border-r-rose-300 dark:border-y-rose-500/40 dark:border-r-rose-500/40' : 'border-y-border border-r-border',
         muted && 'opacity-65',
       )}
     >
+      {state.status === 'in_progress' && <BorderBeam tone={overdue ? 'danger' : 'solar'} duration={overdue ? 4 : 7} width={2} />}
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
           <p className="text-[11px] font-medium text-muted-foreground">

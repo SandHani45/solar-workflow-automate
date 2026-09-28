@@ -11,6 +11,7 @@ import { useCan, useSession } from '@/hooks/use-session';
 import { cn, formatDate, formatINR, formatINRCompact, formatMonth } from '@/lib/utils';
 import type { FinanceDashboard } from '@/lib/types';
 import { CompareLineChart, DonutChart, SimpleBarChart } from '@/components/charts/charts';
+import { OrbsLoader } from '@/components/effects';
 import { resolveNav } from '@/components/layout/nav';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { DataTable, type Column } from '@/components/ui/data-table';
@@ -88,6 +89,7 @@ function FinanceOverview() {
         )}
       </div>
 
+      {isLoading && <OrbsLoader caption="Crunching collections, expenses and profit…" className="py-2" />}
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <StatCard label="Contract value" value={formatINRCompact(t?.contractValue)} icon={Wallet} loading={isLoading} />
         <StatCard label="Received" value={formatINRCompact(t?.received)} icon={IndianRupee} tone="green" loading={isLoading} href="/finance/payments" />

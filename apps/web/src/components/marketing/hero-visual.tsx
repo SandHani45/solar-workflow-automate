@@ -2,6 +2,7 @@ import { AlertCircle, Check, IndianRupee, Zap } from 'lucide-react';
 import { PHASES } from '@solar/shared';
 import { cn } from '@/lib/utils';
 import { TONE_STYLES } from '@/lib/status';
+import { BorderBeam } from '@/components/effects';
 
 /** Static product preview for the hero — built from real phase data, no screenshots to go stale. */
 export function HeroVisual() {
@@ -9,7 +10,8 @@ export function HeroVisual() {
   return (
     <div className="relative mx-auto w-full max-w-xl">
       <div aria-hidden className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-blue-500/20 via-transparent to-amber-400/25 blur-2xl" />
-      <div className="rounded-2xl border border-border bg-card p-4 shadow-2xl shadow-blue-900/10 sm:p-5 sm:pb-14">
+      <div className="relative rounded-2xl border border-border bg-card p-4 shadow-2xl shadow-blue-900/10 sm:p-5 sm:pb-14">
+        <BorderBeam tone="solar" duration={9} width={2} />
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="text-xs font-medium text-muted-foreground">SP-2026-0042 · Residential · On-grid</p>
